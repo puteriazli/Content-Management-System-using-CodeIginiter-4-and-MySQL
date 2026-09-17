@@ -1,69 +1,265 @@
-# CodeIgniter 4 Application Starter
+# Content Management System (CMS) – Simulasi Pembelian Produk
 
-## What is CodeIgniter?
+Aplikasi **Content Management System (CMS)** sederhana berbasis web yang dikembangkan menggunakan **CodeIgniter 4** dan **MySQL** untuk mensimulasikan pengelolaan data pengguna, produk, dan transaksi pembelian pada lingkungan localhost.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+## Repository
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+GitHub Repository:
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+https://github.com/puteriazli/Content-Management-System-using-CodeIginiter-4-and-MySQL
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+---
 
-## Installation & updates
+## 1. Fitur Sistem
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+### Dashboard
+- Menampilkan jumlah total user.
+- Menampilkan jumlah total produk.
+- Menampilkan jumlah total transaksi.
+- Navigasi menuju masing-masing modul.
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+### User Management
+- Menampilkan data user.
+- Menambahkan user.
+- Mengubah data user.
+- Menghapus user.
 
-## Setup
+### Product Management
+- Menampilkan data produk.
+- Menambahkan produk.
+- Mengubah data produk.
+- Menghapus produk.
+- Menyimpan informasi jumlah stok dan harga produk.
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+### Transaction Management
+- Menampilkan data transaksi.
+- Membuat transaksi pembelian.
+- Mengubah data transaksi.
+- Menghapus data transaksi.
+- Menampilkan informasi user, produk, jumlah pembelian, metode pembayaran, total harga, dan tanggal transaksi.
 
-## Important Change with index.php
+---
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+## 2. Teknologi yang Digunakan
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+| Komponen | Teknologi |
+|---|---|
+| Programming Language | PHP |
+| PHP Framework | CodeIgniter 4 |
+| Database | MySQL |
+| Database Driver | MySQLi |
+| Frontend | HTML, CSS, Bootstrap 5 |
+| Web Server | CodeIgniter Development Server |
+| Package Manager | Composer |
+| Development Environment | XAMPP |
+| Code Editor | Visual Studio Code |
+| Version Control | Git & GitHub |
 
-**Please** read the user guide for a better explanation of how CI4 works!
+---
 
-## Repository Management
+## 3. Sistem Operasi
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+Sistem operasi yang digunakan selama proses pengerjaan dan pengujian:
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+**Windows 11 64-bit**
 
-## Server Requirements
+---
 
-PHP version 8.2 or higher is required, with the following extensions installed:
+## 4. Spesifikasi Komputer
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+| Komponen | Spesifikasi |
+|---|---|
+| Device | Lenovo IdeaPad Slim 14 |
+| Processor | Intel Core i5 Generasi ke-11 |
+| RAM | 16 GB |
+| Operating System | Windows 11 64-bit |
+| Development Environment | XAMPP |
+| Code Editor | Visual Studio Code |
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - The end of life date for PHP 8.1 was December 31, 2025.
-> - If you are still using below PHP 8.2, you should upgrade immediately.
-> - The end of life date for PHP 8.2 will be December 31, 2026.
+---
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+## 5. Struktur Project
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+```text
+cms-pembelian/
+│
+├── app/
+│   ├── Config/
+│   ├── Controllers/
+│   │   ├── Dashboard.php
+│   │   ├── Products.php
+│   │   ├── Transactions.php
+│   │   └── Users.php
+│   │
+│   ├── Models/
+│   │   ├── ProductModel.php
+│   │   ├── TransactionModel.php
+│   │   └── UserModel.php
+│   │
+│   └── Views/
+│       ├── dashboard/
+│       ├── products/
+│       ├── transactions/
+│       ├── users/
+│       └── templates/
+│
+├── public/
+├── tests/
+├── writable/
+├── .env
+├── .gitignore
+├── composer.json
+├── composer.lock
+├── README.md
+└── spark
+```
+
+> File `.env` digunakan untuk konfigurasi lokal dan tidak disertakan dalam repository publik.
+
+---
+
+## 6. Database
+
+Database yang digunakan bernama:
+
+```text
+cms
+```
+
+Tabel utama:
+
+```text
+user
+product
+transaction
+```
+
+Tabel transaksi menghubungkan data user dan produk untuk menyimpan informasi pembelian.
+
+---
+
+## 7. Persyaratan Sistem
+
+Pastikan komputer telah memiliki:
+
+- PHP
+- Composer
+- MySQL
+- XAMPP atau MySQL Server
+- Git
+- Visual Studio Code (opsional)
+
+Ekstensi PHP yang digunakan antara lain:
+
+```text
+intl
+mysqli
+mbstring
+json
+```
+
+---
+
+## 8. Konfigurasi Database
+
+Buat atau salin file `.env` pada root project, kemudian sesuaikan konfigurasi database:
+
+```env
+CI_ENVIRONMENT = development
+
+app.baseURL = 'http://localhost:8080/'
+
+database.default.hostname = localhost
+database.default.database = cms
+database.default.username = root
+database.default.password =
+database.default.DBDriver = MySQLi
+database.default.DBPrefix =
+database.default.port = 3306
+```
+
+Sesuaikan username dan password MySQL apabila konfigurasi pada komputer berbeda.
+
+---
+
+## 9. Menjalankan Project
+
+### Langkah 1 – Aktifkan MySQL
+
+Jika menggunakan XAMPP, jalankan **MySQL**.
+
+Apache tidak diperlukan apabila aplikasi dijalankan menggunakan CodeIgniter Development Server.
+
+### Langkah 2 – Masuk ke folder project
+
+```bash
+cd cms-pembelian
+```
+
+### Langkah 3 – Install dependency
+
+Jika folder `vendor` belum tersedia:
+
+```bash
+composer install
+```
+
+### Langkah 4 – Jalankan CodeIgniter
+
+```bash
+php spark serve
+```
+
+Kemudian buka:
+
+```text
+http://localhost:8080/
+```
+
+---
+
+## 10. Alur Sistem
+
+```text
+Dashboard
+   │
+   ├── User Management
+   │      ├── Create
+   │      ├── Read
+   │      ├── Update
+   │      └── Delete
+   │
+   ├── Product Management
+   │      ├── Create
+   │      ├── Read
+   │      ├── Update
+   │      └── Delete
+   │
+   └── Transaction Management
+          ├── Create
+          ├── Read
+          ├── Update
+          └── Delete
+```
+
+---
+
+## 11. Tujuan Pengembangan
+
+Project ini merupakan implementasi sistem CMS sederhana dengan konsep **CRUD (Create, Read, Update, Delete)** dan pengelolaan transaksi pembelian menggunakan CodeIgniter 4 serta MySQL.
+
+Project mencakup praktik perancangan struktur aplikasi, pengelolaan database, pengembangan backend dan frontend, serta version control menggunakan Git dan GitHub.
+
+---
+
+## 12. Author
+
+**Puteri Azli**
+
+GitHub:
+
+https://github.com/puteriazli
+
+Repository:
+
+https://github.com/puteriazli/Content-Management-System-using-CodeIginiter-4-and-MySQL
