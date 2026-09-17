@@ -81,6 +81,9 @@ Sistem operasi yang digunakan selama proses pengerjaan dan pengujian:
 ## 5. Struktur Project
 
 ```text
+## 5. Project Structure
+
+```text
 cms-pembelian/
 │
 ├── app/
@@ -106,6 +109,7 @@ cms-pembelian/
 ├── public/
 ├── tests/
 ├── writable/
+├── interface/
 ├── .env
 ├── .gitignore
 ├── composer.json
@@ -157,6 +161,28 @@ mysqli
 mbstring
 json
 ```
+
+---
+
+## 7. Web Interface
+
+### Dashboard
+![Dashboard](interface/dashboard.png)
+
+### User Management
+![User Management](interface/user.png)
+
+### Product Management
+![Product Management](interface/product.png)
+
+### Transaction Management
+![Transaction Management](interface/transaction.png)
+
+---
+
+## 8. Database Schema
+
+![Database Schema](interface/database_schema.png)
 
 ---
 
