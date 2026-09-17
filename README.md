@@ -164,7 +164,7 @@ json
 
 ---
 
-## 7. Web Interface
+## 7. Web Interface & Database Schema
 
 ### Dashboard
 ![Dashboard](interface/dashboard.png)
@@ -178,9 +178,7 @@ json
 ### Transaction Management
 ![Transaction Management](interface/transaction.png)
 
----
-
-## 8. Database Schema
+### Database Schema
 
 ![Database Schema](interface/database_schema.png)
 
